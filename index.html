@@ -648,7 +648,270 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-   
+    <script>
+
+
+
+
+
+        $(document).ready(function () {
+
+            var starter = [{ name: "paneer 65", discription: "Paneer 65 is a spicy appetizer made with paneer, flour, yogurt, curry leaves and spices.", foodtype: "vegetarian", price: "196" }, { name: "chilli chicken", discription: "Chilli chicken is made with crispy chicken chunks and lightly tossed in a spicy chilli sauce.", foodtype: "non-vegetarian", price: "265" }, { name: "pepper chicken", discription: "Pepper chicken is a delicious Chinese inspired dish popularized by American Chinese restaurants.", foodtype: "non-vegetarian", price: "345" }];
+
+            var main = [{ name: "Butter Chicken", discription: "Butter Chicken or murgh makhani is a curry of chicken in a spiced tomato, butter and cream sauce.", foodtype: "non-vegeterian", price: "496" }, { name: "chicken garlic", discription: "This delicious recipe for Chicken Skewers features an irresistible blend of Mediterranean and Middle Eastern flavors..", foodtype: "non-vegetarian", price: "325" }, { name: "veg manchurian", discription: "Manchurian is a class of Indian Chinese dishes made by roughly chopping and deep-frying a main ingredient like cauliflower, prawn, fish,  paneer cheese and then sautéeing it in a sauce flavored with soy sauce.", foodtype: "vegetarian", price: "285" }];
+
+            var dessert = [{ name: "chocolate molten lava cakes", discription: "Molten chocolate cake is a popular dessert that combines the elements of a chocolate cake and a soufflé.", price: "230" }, { name: "chicken garlic", discription: "sundae made with brownies, vanilla ice cream, chocolate syrup, peanuts, hot fudge, and whipped cream, often topped with a maraschino cherry.", price: "355" }, { name: "Chocolate chip cookie", discription: "A chocolate chip cookie is a drop cookie that features chocolate chips or chocolate morsels as its distinguishing ingredient.", price: "185" }];
+
+            var drink = [{ name: "Negroni", discription: "A favorite of bartenders all over the world, the Negroni is a simple three-ingredient cocktail", price: "130" }, { name: "Moscow Mule", discription: "Popular for good reason, the Moscow Mule is one of the most refreshing things to sip on a hot summer day. Its suggested vessel, a copper mug, also just looks sharp.", price: "95" }, { name: "Mojito", discription: "Originating in Cuba, this refreshing rum-based sip is filled with mint and lime—a perfect combination for sipping by the pool or beach.", price: "115" }];
+
+
+            $('#starter1').text(starter[0].name);
+
+            $('#starter2').text(starter[1].name);
+
+            $('#starter3').text(starter[2].name);
+
+
+            $('#main1').text(main[0].name);
+
+            $('#main2').text(main[1].name);
+
+            $('#main3').text(main[2].name);
+
+
+            $('#dessert1').text(dessert[0].name);
+
+            $('#dessert2').text(dessert[1].name);
+
+            $('#dessert3').text(dessert[2].name);
+
+
+
+            $('#drink1').text(drink[0].name);
+
+            $('#drink2').text(drink[1].name);
+
+            $('#drink3').text(drink[2].name);
+
+
+
+
+
+
+
+
+            $.ajax({
+                // ?results=5
+                url: 'https://randomuser.me/api/?results=5',
+                dataType: 'json',
+                success: function (data) {
+
+                    console.log(data);
+
+                    // alert(data.results[0].login.password);
+
+                    var image_1_src = data.results[0].picture.large;
+
+                    var image_2_src = data.results[1].picture.large;
+
+                    var image_3_src = data.results[2].picture.large;
+
+                    var image_4_src = data.results[3].picture.large;
+
+                    var image_5_src = data.results[4].picture.large;
+
+
+
+                    $('#image1').attr('src', image_1_src);
+
+                    $('#image2').attr('src', image_2_src);
+
+                    $('#image3').attr('src', image_3_src);
+
+                    $('#image4').attr('src', image_4_src);
+
+                    $('#image5').attr('src', image_5_src);
+
+
+
+
+                    var name_user_1 = data.results[0].name.first;
+
+                    var name_user_2 = data.results[1].name.first;
+
+                    var name_user_3 = data.results[2].name.first;
+
+                    var name_user_4 = data.results[3].name.first;
+
+                    var name_user_5 = data.results[4].name.first;
+
+
+
+                    $('#name1').text(name_user_1);
+
+                    $('#name2').text(name_user_2);
+
+                    $('#name3').text(name_user_3);
+
+                    $('#name4').text(name_user_4);
+
+                    $('#name5').text(name_user_5);
+
+
+
+                    var password_user_1 = data.results[0].login.password;
+
+                    var password_user_2 = data.results[1].login.password;
+
+                    var password_user_3 = data.results[2].login.password;
+
+                    var password_user_4 = data.results[3].login.password;
+
+                    var password_user_5 = data.results[4].login.password;
+
+
+                    $('#password1').text(password_user_1);
+
+                    $('#password2').text(password_user_2);
+
+                    $('#password3').text(password_user_3);
+
+                    $('#password4').text(password_user_4);
+
+                    $('#password5').text(password_user_5);
+
+                }
+            });
+
+
+            // button-submit
+
+
+
+            $("#button-submit").click(function () {
+
+                var starter_name = $("#starters").val();
+
+                var main_name = $("#mains").val();
+
+                var dessert_name = $("#desserts").val();
+
+                var drink_name = $("#drinks").val();
+
+
+                var vegetarian = 0;
+                var non_vegetarian = 0;
+
+
+                var i;
+                for (i = 0; i < 3; i++) {
+
+
+                    if (starter_name == starter[i].name) {
+                        starter_price = starter[i].price;
+                        starter_type = starter[i].foodtype;
+
+                        if(starter_type == "vegetarian") {
+                            vegetarian = parseFloat(vegetarian) + parseFloat(starter_price); 
+                        } else {
+                            non_vegetarian = parseFloat(non_vegetarian) + parseFloat(starter_price);
+                        }
+
+                    }
+
+                    if (main_name == main[i].name) {
+                        main_price = main[i].price;
+                        main_type = main[i].foodtype;
+
+                        if(main_type == "vegetarian") {
+                            vegetarian = parseFloat(vegetarian) + parseFloat(main_price); 
+                        } else {
+                            non_vegetarian = parseFloat(non_vegetarian) + parseFloat(main_price);
+                        }
+
+                    }
+
+                    if (dessert_name == dessert[i].name) {
+
+                        dessert_price = dessert[i].price;
+
+                    }
+
+                    if (drink_name == drink[i].name) {
+                        drink_price = drink[i].price;
+                    }
+
+
+
+                }
+
+
+                
+
+
+                var total_price = parseFloat(starter_price) + parseFloat(main_price) + parseFloat(dessert_price) + parseFloat(drink_price);
+
+
+                $(".total_bill").text("");
+                $(".total_bill").text(total_price);
+
+                $(".starter_bill").text("");
+                $(".starter_bill").text(starter_price);
+
+                $(".main_bill").text("");
+                $(".main_bill").text(main_price);
+
+                $(".dessert_bill").text("");
+                $(".dessert_bill").text(dessert_price);
+
+                $(".drink_bill").text("");
+                $(".drink_bill").text(drink_price);
+
+
+                $(".vegetarian_bill").text("");
+                $(".vegetarian_bill").text(vegetarian);
+
+                $(".non_vegetarian_bill").text("");
+                $(".non_vegetarian_bill").text(non_vegetarian);
+
+
+
+
+            });
+
+
+
+
+
+            $("#validate").click(function(){
+
+                
+                
+
+                var given_password = document.getElementById("password_field");
+
+                if(given_password.value.match(/[a-z]/g) && given_password.value.match(/[A-Z]/g) && given_password.value.match(/[0-9]/g) && given_password.value.length >= 8 && given_password.value.match(/[!@#$%^&*]/g)) {
+                    
+                    $(".valid_format").css("display","block");
+                    $(".invalid_format").css("display","none");
+                } else {
+
+                    $(".valid_format").css("display","none");
+                    $(".invalid_format").css("display","block");
+                }
+        
+            });
+
+
+
+
+
+           
+
+
+        });
+
+    </script>
 
 </body>
 
