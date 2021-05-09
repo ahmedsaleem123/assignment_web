@@ -1,0 +1,384 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        /* background-color: #ccc; */
+        background-color: #28a745;
+    color: white;
+        
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+
+    .tab .active:after {
+        content: "";
+    }
+
+</style>
+
+
+<style>
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+    
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+    
+    .accordion:after {
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+    
+    .active:after {
+      content: "\2212";
+      color: white;
+    }
+    
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .accordion.active {
+        background-color: #28a745;
+        color: white;
+    }
+    </style>
+
+<body>
+
+    <h2 class="text-center my-5">Top 5 Meals in Europe</h2>
+   
+    <div class="container shadow" style="padding: 0px;">
+
+   
+
+    <div class="tab">
+        <button class="tablinks active" onclick="openMeal(event, 'Starter')">Starter</button>
+        <button class="tablinks" onclick="openMeal(event, 'Main')">Main</button>
+        <button class="tablinks" onclick="openMeal(event, 'Dessert')">Dessert</button>
+        <button class="tablinks" onclick="openMeal(event, 'Drinks')">Drinks</button>
+    </div>
+
+    <div id="Starter" class="tabcontent" style="display: block;">
+        <h3>Starters</h3>
+
+        <button class="accordion">1)  Beet Eggs</button>
+        <div class="panel">
+            <p>Beet eggs are a traditional Amish dish originating from Pennsylvania. In order to prepare it, eggs are hard-boiled in a seasoned liquid that's made from cooked beets. The liquid is usually seasoned with onions, sugar, vinegar, cloves, salt, and (sometimes) a cinnamon stick. </p>
+        </div>
+
+
+        <button class="accordion">2)  Beggar's Purse</button>
+        <div class="panel">
+            <p>Beggar's purse is an American bite-sized appetizer originating from New York City. The appetizer consists of a small crêpe that's topped with a teaspoon of fine caviar and a dab of crème fraiche. The edges of the small crêpe are pulled up around the filling, then tied with strips of chive in order to resemble a purse. </p>
+        </div>
+
+
+
+        <button class="accordion">3)  Crab Louie</button>
+        <div class="panel">
+            <p>Crab Louie is an American salad dating back to the beginning of the 20th century. The salad is prepared with a combination of Dungeness crab meat, tomatoes, iceberg lettuce, asparagus, hard-boiled eggs, and Louie dressing (based on chili sauce and mayo), while olives, green onions, and bell peppers are optional, but can be added if desired. </p>
+        </div>
+
+
+
+        <button class="accordion">4)  Shrimp Remoulade</button>
+        <div class="panel">
+            <p>Shrimp remoulade is a traditional American dish originating from Louisiana. The dish features fresh shrimp served with a creamy remoulade sauce over crispy iceberg lettuce. The ingredients for red Creole remoulade (the French one is white and based on mayonnaise) include scallions, celery, mustard, Worcestershire sauce, horseradish, garlic, cayenne pepper, paprika, ketchup, and wine vinegar. </p>
+        </div>
+       
+
+
+
+        <button class="accordion">5)  Lomi-Lomi Salmon</button>
+        <div class="panel">
+            <p>Lomi-lomi salmon is a traditional American dish originating from Hawaii. The dish is prepared with salmon and tomatoes as the main ingredients. It was originally introduced to Hawaii by early Western sailors. The salmon is rubbed with salt, then combined with diced tomatoes, minced red onion, and green onions. </p>
+        </div>
+       
+       
+
+
+
+       
+
+
+
+     
+
+
+       
+
+
+
+    </div>
+
+    <div id="Main" class="tabcontent">
+        <h3>Main</h3>
+
+        <button class="accordion">1) Ceviche de Sierra</button>
+        <div class="panel">
+            <p>Originating from the coastal region around Mazatlán, ceviche de Sierra is a traditional Mexican type of ceviche prepared with fresh mackerel as the key ingredient. Other ingredients used in the dish include lime juice, carrots, onions, cucumbers, serrano peppers, oregano, and salt. </p>
+        </div>
+
+
+        <button class="accordion">2) Clams Oreganata</button>
+        <div class="panel">
+            <p>Clams oreganata is an Italian-American dish made with a combination of 6 or 12 clams (usually littleneck clams), butter, breadcrumbs, oregano, parsley, garlic, lemon zest, and white wine. The clams in their shells are topped with a mixture of butter, breadcrumbs, oregano, garlic, parsley, and lemon zest before being baked to perfection. </p>
+        </div>
+
+
+
+        <button class="accordion">3) Oysters Mosca</button>
+        <div class="panel">
+            <p>Oysters Mosca is a famous oyster dish that's named after a New Orleans restaurant that made it popular. It's made with a combination of butter, breadcrumbs, olive oil, garlic, freshly shucked oysters, basil, oregano, red pepper flakes, and grated parmesan cheese. </p>
+        </div>
+
+
+
+        <button class="accordion">4) Oysters Bienville</button>
+        <div class="panel">
+            <p>Originally invented in New Orleans' French Quarter, these oysters are baked in their shells with bread crumbs, grated cheese, onions, mushrooms, shrimp, wine, and a buttery roux. The oysters are baked until lightly browned, then served immediately, preferably garnished with chopped green onions and lemon wedges. </p>
+        </div>
+
+
+
+        <button class="accordion">5) Boudin Balls</button>
+        <div class="panel">
+            <p>Boudin balls are a specialty of Lousiana. These tasty balls typically consist of boudin sausage meat that is shaped into balls, battered, rolled in breadcrumbs, then fried in hot oil. Boudin sausage is made with cooked rice, onions, green peppers, ground pork, and various seasonings. </p>
+        </div>
+
+      
+
+
+       
+
+
+
+       
+
+
+
+       
+
+
+       
+
+    </div>
+
+    <div id="Dessert" class="tabcontent">
+        <h3>Dessert</h3>
+
+        <button class="accordion">1) Chocolate Covered Potato Chips</button>
+        <div class="panel">
+            <p>Chocolate covered potato chips is an American invention that is commonly consumed as a dessert snack. Just like the name suggests, these snacks consist of thin potato chips that are simply dipped in melted chocolate. The chocolate may be regular milk chocolate, dark chocolate, or white chocolate, and the chips are typically ridged because they can hold more chocolate than the regular, straight-cut variety.</p>
+        </div>
+
+
+        <button class="accordion">2) Watergate Salad</button>
+        <div class="panel">
+            <p>Despite its name, Watergate salad is a summertime dessert consisting of a combination of mini marshmallows, pecans, and chunks of pineapple in a base of pistachio pudding. This dessert started its way to popularity in 1985 or 1986, when Kraft put a recipe for the dish on the box of JELL-O Pistachio Flavor Pudding.</p>
+        </div>
+
+
+        <button class="accordion">3) Lane Cake</button>
+        <div class="panel">
+            <p>Lane cake (also known as prize cake and Alabama Lane cake) is a sponge cake filled with a combination of coconut, raisins, custard, and bourbon. To make things even better, it's often topped with a fluffy frosting. The cake was invented by Emma Rylander Lane from Clayton, Alabama.</p>
+        </div>
+
+
+        <button class="accordion">4) Hasty Pudding</button>
+        <div class="panel">
+            <p>Hasty pudding is a traditional New Englander dish with European origins. It is a type of mush containing cornmeal or wheat flour that is stirred to a thick batter in either water or milk. When properly done, it has a consistency similar to that of a porridge, and is always served warm.</p>
+        </div>
+
+
+
+        <button class="accordion">5) Ambrosia Salad</button>
+        <div class="panel">
+            <p>Considered to be both a salad and a dessert, ambrosia is a staple of numerous potlucks and a Christmas tradition in the Southern United States. It typically consists of pineapples, mandarin oranges, coconut, and mini marshmallows, but it can also be enriched with ingredients such as bananas, strawberries, pecans, cherries, whipped cream, yogurt, or cottage cheese.</p>
+        </div>
+
+
+
+
+       
+
+
+
+        
+
+
+
+       
+
+
+       
+    </div>
+
+    <div id="Drinks" class="tabcontent">
+
+       
+
+
+        <h3>Drinks</h3>
+        <button class="accordion">1) Champagne Cocktail</button>
+        <div class="panel">
+            <p>This elegant cocktail is made with champagne, cognac, Angostura bitters, and a sugar cube. To prepare it, a sugar cube is soaked in Angostura bitters and is then placed in a champagne flute. The combination is then topped with cognac and chilled champagne, while the whole cocktail is typically garnished with an orange slice and a maraschino cherry.</p>
+        </div>
+
+
+        <button class="accordion">2) Bay Breeze</button>
+        <div class="panel">
+            <p>Bay Breeze is a refreshing cocktail with Hawaiian origins. It consists of vodka and cranberry juice as its base, with an addition of pineapple juice. This elegant, layered cocktail is sometimes also referred to as Downeaster, Hawaiian Sea Breeze, or Paul Joseph.</p>
+        </div>
+
+
+
+        <button class="accordion">3) Sazerac</button>
+        <div class="panel">
+            <p>Originating from New Orleans, the timeless cocktail known as Sazerac is made with a combination of cognac or rye whiskey, bitters, absinthe, and sugar. Rye whiskey and absinthe can sometimes be replaced by bourbon whiskey and Herbsaint or Pernod.</p>
+        </div>
+
+
+        <button class="accordion">4) Mint Julep</button>
+        <div class="panel">
+            <p>Mint Julep is a cocktail that originated in the 18th century in Kentucky, and it is widely consumed throughout the American South. It contains bourbon, sugar syrup, water, crushed ice, and fresh mint leaves (usually spearmint). In the 18th century, Mint Julep was originally prescribed for stomach-aches, while bourbon was sometimes replaced with aged gin.</p>
+        </div>
+
+
+
+        <button class="accordion">5) Screwdriver</button>
+        <div class="panel">
+            <p>Screwdriver is one of the most popular highball cocktails, made with vodka and orange juice. Although the exact origin of the Screwdriver is unclear, it is believed that it had originated in the United States around the middle of the 20th century, when it was first mentioned in an issue of Time magazine.</p>
+        </div>
+
+       
+
+
+       
+
+
+
+       
+
+
+ 
+    </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function openMeal(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+
+
+
+
+</body>
+
+</html>
